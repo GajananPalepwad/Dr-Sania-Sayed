@@ -2,6 +2,11 @@ import { useState, useEffect } from 'react';
 
 // ── IMAGES ────────────────────────────────────────────
 const IMGS = {
+   cataractImg:   '/images/Cataract.jpeg',
+  diabeticEye:   '/images/Diabetes_eye_care.jpeg',
+  oculoplasty:   '/images/Oculoplasty.jpeg',
+  paediatric:    '/images/Paediatric_eye_care.jpeg',
+  glaucoma:      '/images/Glaucoma.jpeg', 
   headshot:    '/images/img-headshot-1.jpeg',
   surgery:     '/images/img-surgery.jpeg',
   conference:  '/images/conference.jpeg',       // BOA 2025 – podium close-up
@@ -50,8 +55,7 @@ function Navbar() {
     <>
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
         <div className="nav-brand">
-          <div className="nav-logo-circle">S</div>
-          <div>
+<img src="/images/dryeye.jpeg" alt="Logo" style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'cover' }} />          <div>
             <div className="nav-name">Dr. Sania A Sayed</div>
             <div className="nav-title">Eye Specialist &amp; Surgeon</div>
           </div>
@@ -91,7 +95,7 @@ function Hero() {
           <div className="hero-badge"><span />Eye Specialist &amp; Surgeon, Mumbai</div>
           <h1 className="hero-h1">Because your <em>eyes</em><br />deserve the best care</h1>
           <div className="hero-credentials">
-            {['MBBS','D.O.M.S. ','Phaco Refractive Fellow','Kitasato Japan Observership'].map(c => (
+            {['MBBS','DOMS ','Phaco Refractive Fellow','Kitasato Japan Observership'].map(c => (
               <span key={c} className="cred-pill">{c}</span>
             ))}
           </div>
@@ -153,7 +157,7 @@ function Hero() {
 // ════════════════════════════════════════════════════════
 function About() {
   const creds = [
-    { icon:'🎓', title:'MBBS & D.O.M.S. – Gold Medalist', sub:'K.J. Somaiya Medical College, Mumbai' },
+    { icon:'🎓', title:'MBBS & DOMS – Gold Medalist', sub:'K.J. Somaiya Medical College, Mumbai' },
     { icon:'👁️', title:'Fellowship in Phaco Refractive Surgery', sub:'Advanced cataract and refractive surgery training' },
     { icon:'🏥', title:'Teaching Faculty – Ophthalmology', sub:'K.J. Somaiya Medical College, Mumbai' },
     { icon:'🩺', title:'Consultant Ophthalmologist', sub:'K.J. Somaiya Super Speciality Hospital and Habib Hospital' },
@@ -180,7 +184,7 @@ function About() {
           <h2 className="section-title">Dr. Sania A Sayed</h2>
           <p>Dr. Sania A Sayed is a highly qualified ophthalmologist, teaching faculty member at K.J.
              Somaiya Medical College, and consultant ophthalmologist at K.J. Somaiya Super Speciality Hospital
-             and Habib Hospital. She completed her MBBS and D.O.M.S. with a Gold Medal, reflecting her
+             and Habib Hospital. She completed her MBBS and DOMS with a Gold Medal, reflecting her
              exceptional academic dedication.</p>
           <p>She has completed a fellowship in phaco refractive surgery and an international observership at
              Kitasato University, Japan, with focused exposure to advanced ophthalmic care and surgical
@@ -199,7 +203,7 @@ function About() {
             ))}
           </div>
           <div className="about-achievements">
-            {[['Gold','Medal – DO MS'],['1500+','Surgeries'],['50+','Health Camps'],['10+','Publications']].map(([n,l]) => (
+            {[['Gold','Medal – DOMS'],['1500+','Surgeries'],['50+','Health Camps'],['10+','Publications']].map(([n,l]) => (
               <div key={l} className="achievement-card">
                 <div className="ac-num">{n}</div>
                 <div className="ac-lbl">{l}</div>
@@ -229,6 +233,8 @@ const SERVICES = [
   { icon:'🦷', title:'Dry Eye Treatment',       desc:'Diagnosis and customised management plans for chronic dry eye syndrome using latest therapeutic options.' },
   { icon:'📱', title:'Teleconsultation',        desc:'Online video consultations for follow-ups, prescription renewals, and initial assessment from the comfort of your home.' },
 ];
+
+
 
 function Services() {
   return (
