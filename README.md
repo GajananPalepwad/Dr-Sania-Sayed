@@ -1,4 +1,4 @@
-# Dr. Sania Afroz Sayed – Eye Specialist Website (React)
+# Dr. Sania A Sayed – Eye Specialist Website (React)
 
 ## 🚀 Quick Start
 
