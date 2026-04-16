@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 
 // ── IMAGES ────────────────────────────────────────────
 const IMGS = {
-  mr
   headshot:    '/images/img-headshot-1.jpeg',
   surgery:     '/images/img-surgery.jpeg',
   conference:  '/images/conference.jpeg',       // BOA 2025 – podium close-up
@@ -10,15 +9,16 @@ const IMGS = {
   conference2: '/images/conference2.jpeg',      // BOA main hall slit-lamp slide
   conference3: '/images/conference3.jpeg',      // BOA main hall treatment slide
   conferance4: '/images/conferance4.jpeg',      // BOA Winter 2024
+  makrand:     '/images/makrand.jpeg',
   campDesk:    '/images/img-camp-desk.jpeg',
   campConsult: '/images/img-camp-consult.jpeg',
   wellness1:   '/images/img-wellness-1.jpeg',
   ptosisBa:    '/images/img-ptosis-ba.jpeg',
   cataractBa:  '/images/img-cataract-ba.jpeg',
-  awardPhoto:  '/images/WhatsApp_Image_2026-04-14_at_9_35_01_PM.jpeg',
-  wa1:         '/images/WhatsApp_Image_2026-04-14_at_9_35_02_PM.jpeg',
-  wa2:         '/images/WhatsApp_Image_2026-04-14_at_9_35_02_PM__1_.jpeg',
-  wa3:         '/images/WhatsApp_Image_2026-04-14_at_9_35_03_PM.jpeg',
+  awardPhoto:  '/images/WhatsApp Image 2026-04-14 at 9.35.01 PM.jpeg',
+  wa1:         '/images/WhatsApp Image 2026-04-14 at 9.35.02 PM.jpeg',
+  wa2:         '/images/WhatsApp Image 2026-04-14 at 9.35.03 PM (1).jpeg',
+  wa3:         '/images/WhatsApp Image 2026-04-14 at 9.35.03 PM.jpeg',
 };
 
 // ── SCROLL HELPER ─────────────────────────────────────
@@ -89,9 +89,9 @@ function Hero() {
       <div className="hero-inner">
         <div className="hero-text">
           <div className="hero-badge"><span />Eye Specialist &amp; Surgeon, Mumbai</div>
-          <h1 className="hero-h1">Caring for Your<br /><em>Vision</em> &amp; Eye Health</h1>
+          <h1 className="hero-h1">Because your <em>eyes</em><br />deserve the best care</h1>
           <div className="hero-credentials">
-            {['MBBS','DO MS (Gold Medalist)','Fellow – Asia','KJ Somaiya Faculty'].map(c => (
+            {['MBBS','D.O.M.S. ','Phaco Refractive Fellow','Kitasato Japan Observership'].map(c => (
               <span key={c} className="cred-pill">{c}</span>
             ))}
           </div>
@@ -133,7 +133,7 @@ function Hero() {
             <div className="float2-lbl">Medalist D.O.M.S.</div>
           </div>
           <div className="hero-img-card">
-            <img src={IMGS.headshot} alt="Dr. Sania Afroz Sayed" />
+            <img src={IMGS.headshot} alt="Dr. Sania A Sayed" />
           </div>
           <div className="hero-float-badge">
             <div className="float-icon">👁️</div>
@@ -153,10 +153,13 @@ function Hero() {
 // ════════════════════════════════════════════════════════
 function About() {
   const creds = [
-    { icon:'🎓', title:'MBBS & DO MS – Gold Medalist', sub:'K.J. Somaiya Medical College, Mumbai' },
-    { icon:'🌍', title:'Fellow in Ophthalmology (Asia)',   sub:'International Ophthalmology Fellowship' },
-    { icon:'🏥', title:'Faculty – Ophthalmology Dept.',   sub:'KJ Somaiya Medical College & Research Centre' },
-    { icon:'🎤', title:'International Speaker & Presenter',sub:'Presented at global ophthalmology conferences in Europe' },
+    { icon:'🎓', title:'MBBS & D.O.M.S. – Gold Medalist', sub:'K.J. Somaiya Medical College, Mumbai' },
+    { icon:'👁️', title:'Fellowship in Phaco Refractive Surgery', sub:'Advanced cataract and refractive surgery training' },
+    { icon:'🏥', title:'Teaching Faculty – Ophthalmology', sub:'K.J. Somaiya Medical College, Mumbai' },
+    { icon:'🩺', title:'Consultant Ophthalmologist', sub:'K.J. Somaiya Super Speciality Hospital and Habib Hospital' },
+    { icon:'🇯🇵', title:'International Observership – Japan', sub:'Kitasato University Department of Ophthalmology, with focused exposure to advanced ophthalmic care and surgical innovations' },
+    { icon:'🌸', title:'Member – Sakura Science Club, Japan', sub:'International academic and scientific exchange network' },
+    { icon:'🎤', title:'International & National Faculty', sub:'American Academy of Ophthalmology, BOA and AIOS' },
   ];
   return (
     <section id="about">
@@ -174,13 +177,16 @@ function About() {
         </div>
         <div className="about-content">
           <div className="section-label">About the Doctor</div>
-          <h2 className="section-title">Dr. Sania Afroz Sayed</h2>
-          <p>Dr. Sania Afroz Sayed is a highly qualified ophthalmologist and faculty member at K.J. Somaiya
-             Medical College &amp; Research Centre, Mumbai. She completed her MBBS and D.O.M.S. with a Gold
-             Medal, reflecting her exceptional academic dedication.</p>
-          <p>She is a Fellow in Ophthalmology (Asia) and has represented India at international conferences,
-             presenting research on pathophysiology and management of complex eye conditions. She is deeply
-             committed to community eye care through health camps and outreach programs.</p>
+          <h2 className="section-title">Dr. Sania A Sayed</h2>
+          <p>Dr. Sania A Sayed is a highly qualified ophthalmologist, teaching faculty member at K.J.
+             Somaiya Medical College, and consultant ophthalmologist at K.J. Somaiya Super Speciality Hospital
+             and Habib Hospital. She completed her MBBS and D.O.M.S. with a Gold Medal, reflecting her
+             exceptional academic dedication.</p>
+          <p>She has completed a fellowship in phaco refractive surgery and an international observership at
+             Kitasato University, Japan, with focused exposure to advanced ophthalmic care and surgical
+             innovations. She is also a member of Sakura Science Club, Japan, and serves as international and
+             national faculty for ophthalmology forums including the American Academy of Ophthalmology, BOA
+             and AIOS.</p>
           <div className="credentials-list">
             {creds.map(c => (
               <div key={c.title} className="cred-item">
@@ -263,11 +269,11 @@ const GALLERY_ITEMS = [
   { src: IMGS.campDesk,    cat:'camp',        label:'Free eye care camp – patient consultation' },
   { src: IMGS.campConsult, cat:'camp',        label:'Health camp patient examination' },
   { src: IMGS.wellness1,   cat:'camp',        label:'Community health camp at Wellness Polyclinic' },
-  { src: IMGS.wa1,         cat:'camp',        label:'Free Eye Camp conducted under corporator guidance' },
+  { src: IMGS.makrand,     cat:'camp',        label:'Free Eye Camp conducted under corporator guidance' },
   { src: IMGS.wa2,         cat:'camp',        label:'Community eye screening camp' },
-  { src: IMGS.wa3,         cat:'camp',        label:'Somaiya Public Lecture – recognition ceremony' },
+  { src: IMGS.wa1,         cat:'camp',        label:'Somaiya Public Lecture – recognition ceremony' },
   { src: IMGS.awardPhoto,  cat:'clinical',    label:'Global Triumph Foundation Award – Female Eye Surgeon of the Year' },
-  { src: IMGS.headshot,    cat:'clinical',    label:'Dr. Sania Afroz Sayed – Ophthalmologist & Eye Surgeon' },
+  { src: IMGS.headshot,    cat:'clinical',    label:'Dr. Sania A Sayed – Ophthalmologist & Eye Surgeon' },
 ];
 
 function Gallery() {
@@ -594,6 +600,21 @@ function PatientLogin() {
 // ════════════════════════════════════════════════════════
 // CONTACT
 // ════════════════════════════════════════════════════════
+const CLINIC_LOCATIONS = [
+  {
+    name: 'Habib Hospital',
+    address: '159, Jail Road East, near Imam Hussain Chowk, Sandhurst Road Railway Station',
+    city: 'Mumbai – 400009',
+    phones: ['7498476584', '7977419344']
+  },
+  {
+    name: 'K.J. Somaiya Super Speciality Hospital',
+    address: 'Everard Nagar, off Eastern Express Highway, Sion',
+    city: 'Mumbai – 400022',
+    phones: ['7977419344']
+  }
+];
+
 function Contact() {
   const [msgSent, setMsgSent] = useState(false);
   return (
@@ -601,12 +622,34 @@ function Contact() {
       <div className="contact-inner">
         <div className="contact-info">
           <div className="section-label">Find Us</div>
-          <h2 className="section-title">Contact &amp; Location</h2>
-          <p className="section-desc">We're located at Habib Hospital, Dongri, easily accessible from South Mumbai.</p>
+          <h2 className="section-title">Contact &amp; Locations</h2>
+          <p className="section-desc">Dr. Sania Sayed consults at two premium hospitals in Mumbai.</p>
+          <div style={{ marginBottom: 32 }}>
+            <h4 style={{ fontSize:15, color:'var(--navy)', marginBottom:16 }}>Clinic Locations</h4>
+            {CLINIC_LOCATIONS.map((clinic, idx) => (
+              <div key={idx} style={{ marginBottom: 24, paddingBottom: 24, borderBottom: idx < CLINIC_LOCATIONS.length - 1 ? '1px solid var(--border)' : 'none' }}>
+                <h5 style={{ fontSize:14, fontWeight:600, color:'var(--navy)', marginBottom:8 }}>{clinic.name}</h5>
+                <div className="contact-details">
+                  <div className="contact-detail-item">
+                    <div className="cd-icon">📍</div>
+                    <div className="cd-text">
+                      <div className="cdt">Address</div>
+                      <div className="cdv">{clinic.address}<br />{clinic.city}</div>
+                    </div>
+                  </div>
+                  <div className="contact-detail-item">
+                    <div className="cd-icon">📞</div>
+                    <div className="cd-text">
+                      <div className="cdt">Phone</div>
+                      <div className="cdv">{clinic.phones.join(' / ')}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
           <div className="contact-details">
             {[
-              ['📍','Address','Habib Hospital, Dongri, Mumbai – 400022'],
-              ['📞','Phone','+91 7977419344'],
               ['✉️','Email','drsaniasayed@gmail.com'],
             ].map(([icon, label, val]) => (
               <div key={label} className="contact-detail-item">
@@ -635,10 +678,19 @@ function Contact() {
         </div>
         <div>
           <div className="map-placeholder">
-            <div style={{ fontSize:48 }}>🗺️</div>
-            <p>Habib Hospital, Dongri</p>
-            <p style={{ fontSize:13, color:'var(--text3)' }}>Mumbai – 400022</p>
-            <a className="map-btn" href="https://maps.google.com/?q=Habib+Hospital+Dongri+Mumbai" target="_blank" rel="noreferrer">Open in Google Maps ↗</a>
+            <div style={{ fontSize:48, marginBottom:20 }}>🗺️</div>
+            <div style={{ display:'flex', flexDirection:'column', gap:24 }}>
+              <div style={{ textAlign:'center', paddingBottom:24, borderBottom:'1px solid var(--border)' }}>
+                <p style={{ fontSize:16, fontWeight:600, color:'var(--navy)', margin:'0 0 8px 0' }}>Habib Hospital</p>
+                <p style={{ fontSize:13, color:'var(--text3)', margin:'0 0 16px 0', lineHeight:1.5 }}>159, Jail Road East<br />Mumbai – 400009</p>
+                <a className="map-btn" href="https://maps.google.com/?q=Habib+Hospital+159+Jail+Road+East+Mumbai" target="_blank" rel="noreferrer">Open in Google Maps ↗</a>
+              </div>
+              <div style={{ textAlign:'center' }}>
+                <p style={{ fontSize:16, fontWeight:600, color:'var(--navy)', margin:'0 0 8px 0' }}>K.J. Somaiya Hospital</p>
+                <p style={{ fontSize:13, color:'var(--text3)', margin:'0 0 16px 0', lineHeight:1.5 }}>Everard Nagar, Sion<br />Mumbai – 400022</p>
+                <a className="map-btn" href="https://maps.google.com/?q=KJ+Somaiya+Super+Speciality+Hospital+Sion+Mumbai" target="_blank" rel="noreferrer">Open in Google Maps ↗</a>
+              </div>
+            </div>
           </div>
           <div style={{ marginTop:24, background:'var(--cream2)', borderRadius:16, padding:24 }}>
             <h4 style={{ fontSize:15, color:'var(--navy)', marginBottom:16 }}>Send a Quick Message</h4>
@@ -666,7 +718,7 @@ function Footer() {
           <div style={{ display:'flex', alignItems:'center', gap:12 }}>
             <div className="nav-logo-circle">S</div>
             <div>
-              <div style={{ fontFamily:"'Playfair Display',serif", fontSize:16, fontWeight:600 }}>Dr. Sania Afroz Sayed</div>
+              <div style={{ fontFamily:"'Playfair Display',serif", fontSize:16, fontWeight:600 }}>Dr. Sania A Sayed</div>
               <div style={{ fontSize:12, color:'var(--teal-mid)' }}>Ophthalmologist &amp; Eye Surgeon</div>
             </div>
           </div>
@@ -686,8 +738,12 @@ function Footer() {
         </div>
         <div className="footer-col">
           <h4>Contact</h4>
-          <a>Habib Hospital, Dongri</a>
-          <a>+91 7977419344</a>
+          <a><strong>Habib Hospital</strong></a>
+          <a style={{fontSize:12, marginBottom:8}}>159, Jail Road East, Sandhurst Road, Mumbai – 400009</a>
+          <a style={{fontSize:12, marginBottom:12}}>7498476584 / 7977419344</a>
+          <a><strong>K.J. Somaiya Hospital</strong></a>
+          <a style={{fontSize:12, marginBottom:8}}>Everard Nagar, off Eastern Express Highway, Sion, Mumbai – 400022</a>
+          <a style={{fontSize:12, marginBottom:12}}>7977419344</a>
           <a>drsaniasayed@gmail.com</a>
           <a onClick={() => window.location.href = 'https://wa.me/917506013788?text=appointment%20confirmation'}>Book Appointment →</a>
         </div>
