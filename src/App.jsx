@@ -2,18 +2,19 @@ import { useState, useEffect } from 'react';
 
 // ── IMAGES ────────────────────────────────────────────
 const IMGS = {
-   cataractImg:   '/images/Cataract.jpeg',
-  diabeticEye:   '/images/Diabetes_eye_care.jpeg',
+  dryEye:'/images/dryeye.jpeg',
+  cataractImg:   '/images/Cataract.jpeg',
+  diabeticEye:   '/images/diabeticEye.jpeg',
   oculoplasty:   '/images/Oculoplasty.jpeg',
-  paediatric:    '/images/Paediatric_eye_care.jpeg',
-  glaucoma:      '/images/Glaucoma.jpeg', 
+  paediatric:    '/images/Paediatric eye care.jpeg',
+  glaucoma:      '/images/Glaucoma.jpeg',
   headshot:    '/images/img-headshot-1.jpeg',
   surgery:     '/images/img-surgery.jpeg',
-  conference:  '/images/conference.jpeg',       // BOA 2025 – podium close-up
-  conference1: '/images/conference1.jpeg',      // Europe international session
-  conference2: '/images/conference2.jpeg',      // BOA main hall slit-lamp slide
-  conference3: '/images/conference3.jpeg',      // BOA main hall treatment slide
-  conferance4: '/images/conferance4.jpeg',      // BOA Winter 2024
+  conference:  '/images/conference.jpeg',
+  conference1: '/images/conference1.jpeg',
+  conference2: '/images/conference2.jpeg',
+  conference3: '/images/conference3.jpeg',
+  conferance4: '/images/conferance4.jpeg',
   makrand:     '/images/makrand.jpeg',
   campDesk:    '/images/img-camp-desk.jpeg',
   campConsult: '/images/img-camp-consult.jpeg',
@@ -55,7 +56,8 @@ function Navbar() {
     <>
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
         <div className="nav-brand">
-<img src="/images/dryeye.jpeg" alt="Logo" style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'cover' }} />          <div>
+          <img src="/images/dryeye.jpeg" alt="Logo" style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'cover' }} />
+          <div>
             <div className="nav-name">Dr. Sania A Sayed</div>
             <div className="nav-title">Eye Specialist &amp; Surgeon</div>
           </div>
@@ -223,18 +225,18 @@ function About() {
 // ════════════════════════════════════════════════════════
 // SERVICES
 // ════════════════════════════════════════════════════════
+
+// ── UPDATED: 5 services now use images; 3 keep emoji icons ──
 const SERVICES = [
-  { icon:'👁️', title:'Cataract Surgery',        desc:'Advanced phacoemulsification and small incision cataract surgery (SICS) for clear, restored vision with minimal downtime.' },
-  { icon:'✂️', title:'Oculoplasty',             desc:'Surgical correction of ptosis, chalazion, eyelid tumours, and orbital conditions for function and aesthetics.' },
-  { icon:'🔬', title:'Paediatric Eye Care',     desc:'Specialised care for children including amblyopia, congenital cataract, squint correction and vision screening.' },
-  { icon:'💧', title:'Glaucoma Management',     desc:'Diagnosis and long-term management of glaucoma with medical therapy, laser treatment, and surgical intervention.' },
-  { icon:'🩺', title:'Comprehensive Eye Exam',  desc:'Full ocular health assessment including refraction, slit lamp examination, fundus evaluation, and IOP measurement.' },
-  { icon:'🌐', title:'Retina & Diabetic Eye',   desc:'Screening and treatment of diabetic retinopathy, macular degeneration, and other posterior segment conditions.' },
-  { icon:'🦷', title:'Dry Eye Treatment',       desc:'Diagnosis and customised management plans for chronic dry eye syndrome using latest therapeutic options.' },
-  { icon:'📱', title:'Teleconsultation',        desc:'Online video consultations for follow-ups, prescription renewals, and initial assessment from the comfort of your home.' },
+  { img: IMGS.cataractImg, title:'Cataract Surgery',       desc:'Advanced phacoemulsification and small incision cataract surgery (SICS) for clear, restored vision with minimal downtime.' },
+  { img: IMGS.oculoplasty, title:'Oculoplasty',            desc:'Surgical correction of ptosis, chalazion, eyelid tumours, and orbital conditions for function and aesthetics.' },
+  { img: IMGS.paediatric,  title:'Paediatric Eye Care',    desc:'Specialised care for children including amblyopia, congenital cataract, squint correction and vision screening.' },
+  { img: IMGS.glaucoma,    title:'Glaucoma Management',    desc:'Diagnosis and long-term management of glaucoma with medical therapy, laser treatment, and surgical intervention.' },
+  { icon:'🩺',             title:'Comprehensive Eye Exam', desc:'Full ocular health assessment including refraction, slit lamp examination, fundus evaluation, and IOP measurement.' },
+  { img: IMGS.diabeticEye, title:'Retina & Diabetic Eye',  desc:'Screening and treatment of diabetic retinopathy, macular degeneration, and other posterior segment conditions.' },
+  { img: IMGS.dryEye,     title:'Dry Eye Treatment',      desc:'Diagnosis and customised management plans for chronic dry eye syndrome using latest therapeutic options.' },
+  { icon:'📱',             title:'Teleconsultation',       desc:'Online video consultations for follow-ups, prescription renewals, and initial assessment from the comfort of your home.' },
 ];
-
-
 
 function Services() {
   return (
@@ -248,7 +250,22 @@ function Services() {
         <div className="services-grid">
           {SERVICES.map(s => (
             <div key={s.title} className="service-card">
-              <div className="service-icon">{s.icon}</div>
+              {/* ── UPDATED: render image when available, else emoji ── */}
+              <div className="service-icon">
+                {s.img
+                  ? <img
+                      src={s.img}
+                      alt={s.title}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        
+                        display: 'block',
+                      }}
+                    />
+                  : s.icon}
+              </div>
               <h3>{s.title}</h3>
               <p>{s.desc}</p>
               <div className="service-link">Learn more →</div>
@@ -360,33 +377,33 @@ function Appointment() {
         <div className="appt-form">
           <h3>Schedule Appointment</h3>
           <p>Fill in your details and we'll confirm within 24 hours.</p>
-              <div className="form-row">
-                <div className="form-group"><label>First Name</label><input name="firstName" placeholder="Ayesha" value={form.firstName} onChange={handleChange} /></div>
-                <div className="form-group"><label>Last Name</label><input name="lastName" placeholder="Khan" value={form.lastName} onChange={handleChange} /></div>
-              </div>
-              <div className="form-row">
-                <div className="form-group"><label>Phone</label><input name="phone" type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={handleChange} /></div>
-                <div className="form-group"><label>Email</label><input name="email" type="email" placeholder="you@email.com" value={form.email} onChange={handleChange} /></div>
-              </div>
-              <div className="form-row">
-                <div className="form-group"><label>Preferred Date</label><input name="date" type="date" value={form.date} onChange={handleChange} /></div>
-                <div className="form-group"><label>Preferred Time</label>
-                  <select name="time" value={form.time} onChange={handleChange}>
-                    <option>Morning (11am–1pm)</option>
-                    <option>Afternoon (2pm–4pm)</option>
-                    <option>Evening (4pm–5pm)</option>
-                  </select>
-                </div>
-              </div>
-              <div className="form-group"><label>Service Required</label>
-                <select name="service" value={form.service} onChange={handleChange}>
-                  {['General Eye Examination','Cataract Consultation','Oculoplasty / Eyelid Surgery','Paediatric Eye Care','Glaucoma Assessment','Retina / Diabetic Eye Check','Dry Eye Treatment','Teleconsultation'].map(s => <option key={s}>{s}</option>)}
-                </select>
-              </div>
-              <div className="form-group"><label>Any Symptoms / Notes</label>
-                <textarea name="notes" placeholder="Describe your symptoms or any relevant information..." value={form.notes} onChange={handleChange} />
-              </div>
-              <button className="submit-btn" onClick={handleSubmit}>Confirm Appointment ✓</button>
+          <div className="form-row">
+            <div className="form-group"><label>First Name</label><input name="firstName" placeholder="Ayesha" value={form.firstName} onChange={handleChange} /></div>
+            <div className="form-group"><label>Last Name</label><input name="lastName" placeholder="Khan" value={form.lastName} onChange={handleChange} /></div>
+          </div>
+          <div className="form-row">
+            <div className="form-group"><label>Phone</label><input name="phone" type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={handleChange} /></div>
+            <div className="form-group"><label>Email</label><input name="email" type="email" placeholder="you@email.com" value={form.email} onChange={handleChange} /></div>
+          </div>
+          <div className="form-row">
+            <div className="form-group"><label>Preferred Date</label><input name="date" type="date" value={form.date} onChange={handleChange} /></div>
+            <div className="form-group"><label>Preferred Time</label>
+              <select name="time" value={form.time} onChange={handleChange}>
+                <option>Morning (11am–1pm)</option>
+                <option>Afternoon (2pm–4pm)</option>
+                <option>Evening (4pm–5pm)</option>
+              </select>
+            </div>
+          </div>
+          <div className="form-group"><label>Service Required</label>
+            <select name="service" value={form.service} onChange={handleChange}>
+              {['General Eye Examination','Cataract Consultation','Oculoplasty / Eyelid Surgery','Paediatric Eye Care','Glaucoma Assessment','Retina / Diabetic Eye Check','Dry Eye Treatment','Teleconsultation'].map(s => <option key={s}>{s}</option>)}
+            </select>
+          </div>
+          <div className="form-group"><label>Any Symptoms / Notes</label>
+            <textarea name="notes" placeholder="Describe your symptoms or any relevant information..." value={form.notes} onChange={handleChange} />
+          </div>
+          <button className="submit-btn" onClick={handleSubmit}>Confirm Appointment ✓</button>
         </div>
       </div>
     </section>
