@@ -295,8 +295,8 @@ const GALLERY_ITEMS = [
   { src: IMGS.makrand,     cat:'camp',        label:'Free Eye Camp conducted under corporator guidance' },
   { src: IMGS.wa2,         cat:'camp',        label:'Community eye screening camp' },
   { src: IMGS.wa1,         cat:'camp',        label:'Somaiya Public Lecture – recognition ceremony' },
-  { src: IMGS.awardPhoto,  cat:'clinical',    label:'Global Triumph Foundation Award – Female Eye Surgeon of the Year' },
-  { src: IMGS.headshot,    cat:'clinical',    label:'Dr. Sania A Sayed – Ophthalmologist & Eye Surgeon' },
+  { src: IMGS.awardPhoto,  cat:'clinical',    label:'Global Triumph Foundation Award – Female Eye Surgeon of the Year' }
+  
 ];
 
 function Gallery() {
