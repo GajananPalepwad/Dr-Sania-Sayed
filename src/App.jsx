@@ -120,11 +120,12 @@ function Hero() {
             </div>
           )}
           <div className="hero-btns">
-            <a className="btn-primary" onClick={() => window.location.href = 'https://wa.me/917506013788?text=appointment%20confirmation'}>Book Appointment</a>
-            <a className="btn-secondary" onClick={() => scrollTo('quiz')}>Take Vision Quiz</a>
             <button type="button" className="btn-tertiary" onClick={() => setShowMore(prev => !prev)}>
               {showMore ? 'Show less' : 'Know more'}
             </button>
+            <a className="btn-primary" onClick={() => window.location.href = 'https://wa.me/917506013788?text=appointment%20confirmation'}>Book Appointment</a>
+            <a className="btn-secondary" onClick={() => scrollTo('quiz')}>Take Vision Quiz</a>
+            
           </div>
           <div className="hero-stats">
             {[['1500+','Surgeries Performed'],['8+','Years Experience'],['15000+','Patients Treated']].map(([n,l]) => (

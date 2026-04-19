@@ -85,6 +85,15 @@ nav.navbar.scrolled{box-shadow:0 2px 24px rgba(0,0,0,0.08)}
 .hero-credentials{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
 .cred-pill{background:var(--white);border:1px solid var(--cream4);border-radius:50px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--teal-dark)}
 .hero-desc{font-size:16px;color:var(--text2);line-height:1.7;margin-bottom:36px;max-width:520px}
+.hero-more p {
+  font-size: 16px;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  max-width: 520px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+}
 .hero-btns{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .btn-primary{
   background:var(--teal);color:#fff;padding:14px 32px;border-radius:50px;
