@@ -10,6 +10,8 @@ const IMGS = {
   glaucoma:      '/images/Glaucoma.jpeg',
   headshot:    '/images/img-headshot-1.jpeg',
   surgery:     '/images/img-surgery.jpeg',
+  Teleconsultation: '/images/Teleconsultation.png',
+  ComprehensiveEyeExam: '/images/ComprehensiveEyeExam.png',
   conference:  '/images/conference.jpeg',
   conference1: '/images/conference1.jpeg',
   conference2: '/images/conference2.jpeg',
@@ -97,7 +99,7 @@ function Hero() {
           <div className="hero-badge"><span />Eye Specialist &amp; Surgeon, Mumbai</div>
           <h1 className="hero-h1">Because your <em>eyes</em><br />deserve the best care</h1>
           <div className="hero-credentials">
-            {['MBBS','DOMS ','Phaco Refractive Fellow','Kitasato Japan Observership'].map(c => (
+            {['MBBS','DO MS Gold Medalist','Phaco Refractive Fellow','Kitasato Japan Observership'].map(c => (
               <span key={c} className="cred-pill">{c}</span>
             ))}
           </div>
@@ -159,7 +161,7 @@ function Hero() {
 // ════════════════════════════════════════════════════════
 function About() {
   const creds = [
-    { icon:'🎓', title:'MBBS & DOMS – Gold Medalist', sub:'K.J. Somaiya Medical College, Mumbai' },
+    { icon:'🎓', title:'MBBS & DO MS – Gold Medalist', sub:'K.J. Somaiya Medical College, Mumbai' },
     { icon:'👁️', title:'Fellowship in Phaco Refractive Surgery', sub:'Advanced cataract and refractive surgery training' },
     { icon:'🏥', title:'Teaching Faculty – Ophthalmology', sub:'K.J. Somaiya Medical College, Mumbai' },
     { icon:'🩺', title:'Consultant Ophthalmologist', sub:'K.J. Somaiya Super Speciality Hospital and Habib Hospital' },
@@ -186,7 +188,7 @@ function About() {
           <h2 className="section-title">Dr. Sania A Sayed</h2>
           <p>Dr. Sania A Sayed is a highly qualified ophthalmologist, teaching faculty member at K.J.
              Somaiya Medical College, and consultant ophthalmologist at K.J. Somaiya Super Speciality Hospital
-             and Habib Hospital. She completed her MBBS and DOMS with a Gold Medal, reflecting her
+             and Habib Hospital. She completed her MBBS and DO MS with a Gold Medal, reflecting her
              exceptional academic dedication.</p>
           <p>She has completed a fellowship in phaco refractive surgery and an international observership at
              Kitasato University, Japan, with focused exposure to advanced ophthalmic care and surgical
@@ -205,7 +207,7 @@ function About() {
             ))}
           </div>
           <div className="about-achievements">
-            {[['Gold','Medal – DOMS'],['1500+','Surgeries'],['50+','Health Camps'],['10+','Publications']].map(([n,l]) => (
+            {[['Gold','Medal – DO MS'],['1500+','Surgeries'],['50+','Health Camps'],['50+','Publications & Conferences']].map(([n,l]) => (
               <div key={l} className="achievement-card">
                 <div className="ac-num">{n}</div>
                 <div className="ac-lbl">{l}</div>
@@ -232,10 +234,10 @@ const SERVICES = [
   { img: IMGS.oculoplasty, title:'Oculoplasty',            desc:'Surgical correction of ptosis, chalazion, eyelid tumours, and orbital conditions for function and aesthetics.' },
   { img: IMGS.paediatric,  title:'Paediatric Eye Care',    desc:'Specialised care for children including amblyopia, congenital cataract, squint correction and vision screening.' },
   { img: IMGS.glaucoma,    title:'Glaucoma Management',    desc:'Diagnosis and long-term management of glaucoma with medical therapy, laser treatment, and surgical intervention.' },
-  { icon:'🩺',             title:'Comprehensive Eye Exam', desc:'Full ocular health assessment including refraction, slit lamp examination, fundus evaluation, and IOP measurement.' },
+  { img: IMGS.ComprehensiveEyeExam,             title:'Comprehensive Eye Exam', desc:'Full ocular health assessment including refraction, slit lamp examination, fundus evaluation, and IOP measurement.' },
   { img: IMGS.diabeticEye, title:'Retina & Diabetic Eye',  desc:'Screening and treatment of diabetic retinopathy, macular degeneration, and other posterior segment conditions.' },
   { img: IMGS.dryEye,     title:'Dry Eye Treatment',      desc:'Diagnosis and customised management plans for chronic dry eye syndrome using latest therapeutic options.' },
-  { icon:'📱',             title:'Teleconsultation',       desc:'Online video consultations for follow-ups, prescription renewals, and initial assessment from the comfort of your home.' },
+  { img:IMGS.Teleconsultation,             title:'Teleconsultation',       desc:'Online video consultations for follow-ups, prescription renewals, and initial assessment from the comfort of your home.' },
 ];
 
 function Services() {
