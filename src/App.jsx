@@ -2,31 +2,31 @@ import { useState, useEffect } from 'react';
 
 // ── IMAGES ────────────────────────────────────────────
 const IMGS = {
-  dryEye:'/images/dryeye.jpeg',
-  cataractImg:   '/images/Cataract.jpeg',
-  diabeticEye:   '/images/diabeticEye.jpeg',
-  oculoplasty:   '/images/Oculoplasty.jpeg',
-  paediatric:    '/images/Paediatric eye care.jpeg',
-  glaucoma:      '/images/Glaucoma.jpeg',
-  headshot:    '/images/img-headshot-1.jpeg',
-  surgery:     '/images/img-surgery.jpeg',
+  dryEye: '/images/dryeye.jpeg',
+  cataractImg: '/images/Cataract.jpeg',
+  diabeticEye: '/images/diabeticEye.jpeg',
+  oculoplasty: '/images/Oculoplasty.jpeg',
+  paediatric: '/images/Paediatric eye care.jpeg',
+  glaucoma: '/images/Glaucoma.jpeg',
+  headshot: '/images/img-headshot-1.jpeg',
+  surgery: '/images/img-surgery.jpeg',
   Teleconsultation: '/images/Teleconsultation.png',
   ComprehensiveEyeExam: '/images/ComprehensiveEyeExam.png',
-  conference:  '/images/conference.jpeg',
+  conference: '/images/conference.jpeg',
   conference1: '/images/conference1.jpeg',
   conference2: '/images/conference2.jpeg',
   conference3: '/images/conference3.jpeg',
   conferance4: '/images/conferance4.jpeg',
-  makrand:     '/images/makrand.jpeg',
-  campDesk:    '/images/img-camp-desk.jpeg',
+  makrand: '/images/makrand.jpeg',
+  campDesk: '/images/img-camp-desk.jpeg',
   campConsult: '/images/img-camp-consult.jpeg',
-  wellness1:   '/images/img-wellness-1.jpeg',
-  ptosisBa:    '/images/img-ptosis-ba.jpeg',
-  cataractBa:  '/images/img-cataract-ba.jpeg',
-  awardPhoto:  '/images/WhatsApp Image 2026-04-14 at 9.35.01 PM.jpeg',
-  wa1:         '/images/WhatsApp Image 2026-04-14 at 9.35.02 PM.jpeg',
-  wa2:         '/images/WhatsApp Image 2026-04-14 at 9.35.03 PM (1).jpeg',
-  wa3:         '/images/WhatsApp Image 2026-04-14 at 9.35.03 PM.jpeg',
+  wellness1: '/images/img-wellness-1.jpeg',
+  ptosisBa: '/images/img-ptosis-ba.jpeg',
+  cataractBa: '/images/img-cataract-ba.jpeg',
+  awardPhoto: '/images/WhatsApp Image 2026-04-14 at 9.35.01 PM.jpeg',
+  wa1: '/images/WhatsApp Image 2026-04-14 at 9.35.02 PM.jpeg',
+  wa2: '/images/WhatsApp Image 2026-04-14 at 9.35.03 PM (1).jpeg',
+  wa3: '/images/WhatsApp Image 2026-04-14 at 9.35.03 PM.jpeg',
 };
 
 // ── SCROLL HELPER ─────────────────────────────────────
@@ -48,8 +48,8 @@ function Navbar() {
   }, []);
 
   const links = [
-    ['home','Home'],['about','About'],['services','Services'],
-    ['gallery','Gallery'],['reviews','Reviews'],['contact','Contact'],
+    ['home', 'Home'], ['about', 'About'], ['services', 'Services'],
+    ['gallery', 'Gallery'], ['reviews', 'Reviews'], ['contact', 'Contact'],
   ];
 
   const go = (id) => { scrollTo(id); setMenuOpen(false); };
@@ -65,17 +65,17 @@ function Navbar() {
           </div>
         </div>
         <div className="nav-links">
-          {links.map(([id,label]) => (
+          {links.map(([id, label]) => (
             <a key={id} onClick={() => go(id)}>{label}</a>
           ))}
           <a className="nav-cta" onClick={() => window.location.href = 'https://wa.me/917506013788?text=appointment%20confirmation'}>Book Appointment</a>
         </div>
         <button className="hamburger" onClick={() => setMenuOpen(o => !o)}>
-          <span/><span/><span/>
+          <span /><span /><span />
         </button>
       </nav>
       <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
-        {links.map(([id,label]) => (
+        {links.map(([id, label]) => (
           <a key={id} onClick={() => go(id)}>{label}</a>
         ))}
         <a className="nav-cta" onClick={() => window.location.href = 'https://wa.me/917506013788?text=appointment%20confirmation'}>Book Appointment</a>
@@ -99,7 +99,7 @@ function Hero() {
           <div className="hero-badge"><span />Eye Specialist &amp; Surgeon, Mumbai</div>
           <h1 className="hero-h1">Because your <em>eyes</em><br />deserve the best care</h1>
           <div className="hero-credentials">
-            {['MBBS','DO MS Gold Medalist','Phaco Refractive Fellow','Kitasato Japan Observership'].map(c => (
+            {['MBBS', 'DO MS Gold Medalist', 'Phaco Refractive Fellow', 'Kitasato Japan Observership'].map(c => (
               <span key={c} className="cred-pill">{c}</span>
             ))}
           </div>
@@ -125,10 +125,10 @@ function Hero() {
             </button>
             <a className="btn-primary" onClick={() => window.location.href = 'https://wa.me/917506013788?text=appointment%20confirmation'}>Book Appointment</a>
             <a className="btn-secondary" onClick={() => scrollTo('quiz')}>Take Vision Quiz</a>
-            
+
           </div>
           <div className="hero-stats">
-            {[['1500+','Surgeries Performed'],['8+','Years Experience'],['15000+','Patients Treated']].map(([n,l]) => (
+            {[['1500+', 'Surgeries Performed'], ['8+', 'Years Experience'], ['15000+', 'Patients Treated']].map(([n, l]) => (
               <div key={l} className="hero-stat">
                 <div className="num">{n}</div>
                 <div className="lbl">{l}</div>
@@ -162,13 +162,13 @@ function Hero() {
 // ════════════════════════════════════════════════════════
 function About() {
   const creds = [
-    { icon:'🎓', title:'MBBS & DO MS – Gold Medalist', sub:'K.J. Somaiya Medical College, Mumbai' },
-    { icon:'👁️', title:'Fellowship in Phaco Refractive Surgery', sub:'Advanced cataract and refractive surgery training' },
-    { icon:'🏥', title:'Teaching Faculty – Ophthalmology', sub:'K.J. Somaiya Medical College, Mumbai' },
-    { icon:'🩺', title:'Consultant Ophthalmologist', sub:'K.J. Somaiya Super Speciality Hospital and Habib Hospital' },
-    { icon:'🇯🇵', title:'International Observership – Japan', sub:'Kitasato University Department of Ophthalmology, with focused exposure to advanced ophthalmic care and surgical innovations' },
-    { icon:'🌸', title:'Member – Sakura Science Club, Japan', sub:'International academic and scientific exchange network' },
-    { icon:'🎤', title:'International & National Faculty', sub:'American Academy of Ophthalmology, BOA and AIOS' },
+    { icon: '🎓', title: 'MBBS & DO MS – Gold Medalist', sub: 'K.J. Somaiya Medical College, Mumbai' },
+    { icon: '👁️', title: 'Fellowship in Phaco Refractive Surgery', sub: 'Advanced cataract and refractive surgery training' },
+    { icon: '🏥', title: 'Teaching Faculty – Ophthalmology', sub: 'K.J. Somaiya Medical College, Mumbai' },
+    { icon: '🩺', title: 'Consultant Ophthalmologist', sub: 'K.J. Somaiya Super Speciality Hospital and Habib Hospital' },
+    { icon: '🇯🇵', title: 'International Observership – Japan', sub: 'Kitasato University Department of Ophthalmology, with focused exposure to advanced ophthalmic care and surgical innovations' },
+    { icon: '🌸', title: 'Member – Sakura Science Club, Japan', sub: 'International academic and scientific exchange network' },
+    { icon: '🎤', title: 'International & National Faculty', sub: 'American Academy of Ophthalmology, BOA and AIOS' },
   ];
   return (
     <section id="about">
@@ -188,14 +188,14 @@ function About() {
           <div className="section-label">About the Doctor</div>
           <h2 className="section-title">Dr. Sania A Sayed</h2>
           <p>Dr. Sania A Sayed is a highly qualified ophthalmologist, teaching faculty member at K.J.
-             Somaiya Medical College, and consultant ophthalmologist at K.J. Somaiya Super Speciality Hospital
-             and Habib Hospital. She completed her MBBS and DO MS with a Gold Medal, reflecting her
-             exceptional academic dedication.</p>
+            Somaiya Medical College, and consultant ophthalmologist at K.J. Somaiya Super Speciality Hospital
+            and Habib Hospital. She completed her MBBS and DO MS with a Gold Medal, reflecting her
+            exceptional academic dedication.</p>
           <p>She has completed a fellowship in phaco refractive surgery and an international observership at
-             Kitasato University, Japan, with focused exposure to advanced ophthalmic care and surgical
-             innovations. She is also a member of Sakura Science Club, Japan, and serves as international and
-             national faculty for ophthalmology forums including the American Academy of Ophthalmology, BOA
-             and AIOS.</p>
+            Kitasato University, Japan, with focused exposure to advanced ophthalmic care and surgical
+            innovations. She is also a member of Sakura Science Club, Japan, and serves as international and
+            national faculty for ophthalmology forums including the American Academy of Ophthalmology, BOA
+            and AIOS.</p>
           <div className="credentials-list">
             {creds.map(c => (
               <div key={c.title} className="cred-item">
@@ -208,7 +208,7 @@ function About() {
             ))}
           </div>
           <div className="about-achievements">
-            {[['Gold','Medal – DO MS'],['1500+','Surgeries'],['50+','Health Camps'],['50+','Publications & Conferences']].map(([n,l]) => (
+            {[['Gold', 'Medal – DO MS'], ['1500+', 'Surgeries'], ['50+', 'Health Camps'], ['50+', 'Publications & Conferences']].map(([n, l]) => (
               <div key={l} className="achievement-card">
                 <div className="ac-num">{n}</div>
                 <div className="ac-lbl">{l}</div>
@@ -231,14 +231,14 @@ function About() {
 
 // ── UPDATED: 5 services now use images; 3 keep emoji icons ──
 const SERVICES = [
-  { img: IMGS.cataractImg, title:'Cataract Surgery',       desc:'Advanced phacoemulsification and small incision cataract surgery (SICS) for clear, restored vision with minimal downtime.' },
-  { img: IMGS.oculoplasty, title:'Oculoplasty',            desc:'Surgical correction of ptosis, chalazion, eyelid tumours, and orbital conditions for function and aesthetics.' },
-  { img: IMGS.paediatric,  title:'Paediatric Eye Care',    desc:'Specialised care for children including amblyopia, congenital cataract, squint correction and vision screening.' },
-  { img: IMGS.glaucoma,    title:'Glaucoma Management',    desc:'Diagnosis and long-term management of glaucoma with medical therapy, laser treatment, and surgical intervention.' },
-  { img: IMGS.ComprehensiveEyeExam,             title:'Comprehensive Eye Exam', desc:'Full ocular health assessment including refraction, slit lamp examination, fundus evaluation, and IOP measurement.' },
-  { img: IMGS.diabeticEye, title:'Retina & Diabetic Eye',  desc:'Screening and treatment of diabetic retinopathy, macular degeneration, and other posterior segment conditions.' },
-  { img: IMGS.dryEye,     title:'Dry Eye Treatment',      desc:'Diagnosis and customised management plans for chronic dry eye syndrome using latest therapeutic options.' },
-  { img:IMGS.Teleconsultation,             title:'Teleconsultation',       desc:'Online video consultations for follow-ups, prescription renewals, and initial assessment from the comfort of your home.' },
+  { img: IMGS.cataractImg, title: 'Cataract Surgery', desc: 'Advanced phacoemulsification and small incision cataract surgery (SICS) for clear, restored vision with minimal downtime.' },
+  { img: IMGS.oculoplasty, title: 'Oculoplasty', desc: 'Surgical correction of ptosis, chalazion, eyelid tumours, and orbital conditions for function and aesthetics.' },
+  { img: IMGS.paediatric, title: 'Paediatric Eye Care', desc: 'Specialised care for children including amblyopia, congenital cataract, squint correction and vision screening.' },
+  { img: IMGS.glaucoma, title: 'Glaucoma Management', desc: 'Diagnosis and long-term management of glaucoma with medical therapy, laser treatment, and surgical intervention.' },
+  { img: IMGS.ComprehensiveEyeExam, title: 'Comprehensive Eye Exam', desc: 'Full ocular health assessment including refraction, slit lamp examination, fundus evaluation, and IOP measurement.' },
+  { img: IMGS.diabeticEye, title: 'Retina & Diabetic Eye', desc: 'Screening and treatment of diabetic retinopathy, macular degeneration, and other posterior segment conditions.' },
+  { img: IMGS.dryEye, title: 'Dry Eye Treatment', desc: 'Diagnosis and customised management plans for chronic dry eye syndrome using latest therapeutic options.' },
+  { img: IMGS.Teleconsultation, title: 'Teleconsultation', desc: 'Online video consultations for follow-ups, prescription renewals, and initial assessment from the comfort of your home.' },
 ];
 
 function Services() {
@@ -257,16 +257,16 @@ function Services() {
               <div className="service-icon">
                 {s.img
                   ? <img
-                      src={s.img}
-                      alt={s.title}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        
-                        display: 'block',
-                      }}
-                    />
+                    src={s.img}
+                    alt={s.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+
+                      display: 'block',
+                    }}
+                  />
                   : s.icon}
               </div>
               <h3>{s.title}</h3>
@@ -284,28 +284,28 @@ function Services() {
 // GALLERY
 // ════════════════════════════════════════════════════════
 const GALLERY_ITEMS = [
-  { src: IMGS.surgery,     cat:'clinical',    label:'Performing cataract surgery under Carl Zeiss microscope' },
-  { src: IMGS.conference,  cat:'conference',  label:'Presenting at BOA 35th Annual Conference, The Westin Powai' },
-  { src: IMGS.conference1, cat:'conference',  label:'Presenting at International Ophthalmology Conference, Europe' },
-  { src: IMGS.conference2, cat:'conference',  label:'BOA Annual Conference FOCUS 2025 – Slit Lamp case presentation' },
-  { src: IMGS.conference3, cat:'conference',  label:'BOA Annual Conference FOCUS 2025 – Treatment protocol presentation' },
-  { src: IMGS.conferance4, cat:'conference',  label:'BOA Winter Conference FOCUS 2024 – The Westin, Powai' },
-  { src: IMGS.ptosisBa,    cat:'results',     label:'Ptosis correction – Before & After results' },
-  { src: IMGS.cataractBa,  cat:'results',     label:'Paediatric cataract – IOL implant before & after' },
-  { src: IMGS.campDesk,    cat:'camp',        label:'Free eye care camp – patient consultation' },
-  { src: IMGS.campConsult, cat:'camp',        label:'Health camp patient examination' },
-  { src: IMGS.wellness1,   cat:'camp',        label:'Community health camp at Wellness Polyclinic' },
-  { src: IMGS.makrand,     cat:'camp',        label:'Free Eye Camp conducted under corporator guidance' },
-  { src: IMGS.wa2,         cat:'camp',        label:'Community eye screening camp' },
-  { src: IMGS.wa1,         cat:'camp',        label:'Somaiya Public Lecture – recognition ceremony' },
-  { src: IMGS.awardPhoto,  cat:'clinical',    label:'Global Triumph Foundation Award – Female Eye Surgeon of the Year' }
-  
+  { src: IMGS.surgery, cat: 'clinical', label: 'Performing cataract surgery under Carl Zeiss microscope' },
+  { src: IMGS.conference, cat: 'conference', label: 'Presenting at BOA 35th Annual Conference, The Westin Powai' },
+  { src: IMGS.conference1, cat: 'conference', label: 'Presenting at International Ophthalmology Conference, Europe' },
+  { src: IMGS.conference2, cat: 'conference', label: 'BOA Annual Conference FOCUS 2025 – Slit Lamp case presentation' },
+  { src: IMGS.conference3, cat: 'conference', label: 'BOA Annual Conference FOCUS 2025 – Treatment protocol presentation' },
+  { src: IMGS.conferance4, cat: 'conference', label: 'BOA Winter Conference FOCUS 2024 – The Westin, Powai' },
+  { src: IMGS.ptosisBa, cat: 'results', label: 'Ptosis correction – Before & After results' },
+  { src: IMGS.cataractBa, cat: 'results', label: 'Paediatric cataract – IOL implant before & after' },
+  { src: IMGS.campDesk, cat: 'camp', label: 'Free eye care camp – patient consultation' },
+  { src: IMGS.campConsult, cat: 'camp', label: 'Health camp patient examination' },
+  { src: IMGS.wellness1, cat: 'camp', label: 'Community health camp at Wellness Polyclinic' },
+  { src: IMGS.makrand, cat: 'camp', label: 'Free Eye Camp conducted under corporator guidance' },
+  { src: IMGS.wa2, cat: 'camp', label: 'Community eye screening camp' },
+  { src: IMGS.wa1, cat: 'camp', label: 'Somaiya Public Lecture – recognition ceremony' },
+  { src: IMGS.awardPhoto, cat: 'clinical', label: 'Global Triumph Foundation Award – Female Eye Surgeon of the Year' }
+
 ];
 
 function Gallery() {
   const [activeTab, setActiveTab] = useState('all');
   const [lightbox, setLightbox] = useState(null);
-  const tabs = [['all','All Photos'],['clinical','Clinical Work'],['conference','Conferences'],['camp','Health Camps'],['results','Patient Results']];
+  const tabs = [['all', 'All Photos'], ['clinical', 'Clinical Work'], ['conference', 'Conferences'], ['camp', 'Health Camps'], ['results', 'Patient Results']];
   const shown = GALLERY_ITEMS.filter(i => activeTab === 'all' || i.cat === activeTab);
 
   return (
@@ -322,8 +322,8 @@ function Gallery() {
           <h2 className="section-title">Work &amp; Achievements</h2>
         </div>
         <div className="gallery-tabs">
-          {tabs.map(([k,l]) => (
-            <button key={k} className={`gallery-tab${activeTab===k?' active':''}`} onClick={() => setActiveTab(k)}>{l}</button>
+          {tabs.map(([k, l]) => (
+            <button key={k} className={`gallery-tab${activeTab === k ? ' active' : ''}`} onClick={() => setActiveTab(k)}>{l}</button>
           ))}
         </div>
         <div className="gallery-grid">
@@ -343,7 +343,7 @@ function Gallery() {
 // APPOINTMENT
 // ════════════════════════════════════════════════════════
 function Appointment() {
-  const [form, setForm] = useState({ firstName:'', lastName:'', phone:'', email:'', date:'', time:'Morning (11am–1pm)', service:'General Eye Examination', notes:'' });
+  const [form, setForm] = useState({ firstName: '', lastName: '', phone: '', email: '', date: '', time: 'Morning (11am–1pm)', service: 'General Eye Examination', notes: '' });
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
   const handleSubmit = () => {
@@ -362,13 +362,18 @@ function Appointment() {
           <p>Whether you need a routine eye check-up, treatment for an eye condition, or a surgical consultation — we're here to help.</p>
           <div className="appt-info-list">
             {[
-              ['📍','Location','Habib Hospital - Dongri – 400022'],
-              ['📞','Phone / WhatsApp','+91 7977419344'],
-              ['🕐','OPD Hours','Mon–Sat: 11:00 AM – 5:00 PM'],
-              ['📧','Email',' drsaniasayed@gmail.com'],
-            ].map(([icon,label,val]) => (
+              ['📍', 'Location (Sion)', 'K J Somaiya Super Speciality Hospital, Sion'],
+              ['🕐', 'OPD Hours (Sion)', 'Mon–Sat: 10:00 AM – 3:00 PM'],
+
+              ['📍', 'Location (Dongri)', 'Habib Hospital - Dongri – 400022'],
+              ['🕐', 'OPD Hours (Dongri)', 'Mon–Sat: 3:30 PM – 5:30 PM'],
+
+              ['📞', 'Phone / WhatsApp', '+91 7977419344'],
+              ['📧', 'Email', 'drsaniasayed@gmail.com'],
+            ].map(([icon, label, val]) => (
               <div key={label} className="appt-info-item">
                 <div className="appt-info-icon">{icon}</div>
+
                 <div className="appt-info-text">
                   <div className="ait">{label}</div>
                   <div className="aiv">{val}</div>
@@ -400,7 +405,7 @@ function Appointment() {
           </div>
           <div className="form-group"><label>Service Required</label>
             <select name="service" value={form.service} onChange={handleChange}>
-              {['General Eye Examination','Cataract Consultation','Oculoplasty / Eyelid Surgery','Paediatric Eye Care','Glaucoma Assessment','Retina / Diabetic Eye Check','Dry Eye Treatment','Teleconsultation'].map(s => <option key={s}>{s}</option>)}
+              {['General Eye Examination', 'Cataract Consultation', 'Oculoplasty / Eyelid Surgery', 'Paediatric Eye Care', 'Glaucoma Assessment', 'Retina / Diabetic Eye Check', 'Dry Eye Treatment', 'Teleconsultation'].map(s => <option key={s}>{s}</option>)}
             </select>
           </div>
           <div className="form-group"><label>Any Symptoms / Notes</label>
@@ -417,14 +422,14 @@ function Appointment() {
 // VISION QUIZ
 // ════════════════════════════════════════════════════════
 const QUESTIONS = [
-  { q:'How often do you experience blurry or hazy vision?', s:'Even occasional blurriness is worth checking.', opts:['Never','Occasionally','Often','Almost always'] },
-  { q:'Do you have difficulty seeing in low-light or night conditions?', s:'Night vision issues can indicate retinal or vitamin A problems.', opts:['No, my night vision is fine','Slight difficulty','Moderate difficulty','Significant difficulty'] },
-  { q:'How many hours do you spend on screens daily?', s:'Prolonged screen use causes digital eye strain.', opts:['Less than 2 hours','2–4 hours','4–8 hours','More than 8 hours'] },
-  { q:'Do you experience eye pain, redness, or irritation frequently?', s:'Persistent irritation should be evaluated.', opts:['Never','Rarely','Sometimes','Frequently'] },
-  { q:'When did you last have a comprehensive eye examination?', s:'Regular check-ups are key to early detection.', opts:['Within the last year','1–2 years ago','3–5 years ago','Never / Don\'t remember'] },
-  { q:'Do you have a family history of glaucoma or macular degeneration?', s:'Family history significantly increases your risk.', opts:['No family history','Not sure','One family member','Multiple family members'] },
-  { q:'Do you experience frequent headaches, especially after reading or close work?', s:'This could indicate uncorrected refractive error.', opts:['Never','Occasionally','Often','Almost daily'] },
-  { q:'Do you have diabetes, hypertension, or another systemic condition?', s:'Systemic conditions can directly affect eye health.', opts:['None','Hypertension only','Diabetes only','Both / Multiple conditions'] },
+  { q: 'How often do you experience blurry or hazy vision?', s: 'Even occasional blurriness is worth checking.', opts: ['Never', 'Occasionally', 'Often', 'Almost always'] },
+  { q: 'Do you have difficulty seeing in low-light or night conditions?', s: 'Night vision issues can indicate retinal or vitamin A problems.', opts: ['No, my night vision is fine', 'Slight difficulty', 'Moderate difficulty', 'Significant difficulty'] },
+  { q: 'How many hours do you spend on screens daily?', s: 'Prolonged screen use causes digital eye strain.', opts: ['Less than 2 hours', '2–4 hours', '4–8 hours', 'More than 8 hours'] },
+  { q: 'Do you experience eye pain, redness, or irritation frequently?', s: 'Persistent irritation should be evaluated.', opts: ['Never', 'Rarely', 'Sometimes', 'Frequently'] },
+  { q: 'When did you last have a comprehensive eye examination?', s: 'Regular check-ups are key to early detection.', opts: ['Within the last year', '1–2 years ago', '3–5 years ago', 'Never / Don\'t remember'] },
+  { q: 'Do you have a family history of glaucoma or macular degeneration?', s: 'Family history significantly increases your risk.', opts: ['No family history', 'Not sure', 'One family member', 'Multiple family members'] },
+  { q: 'Do you experience frequent headaches, especially after reading or close work?', s: 'This could indicate uncorrected refractive error.', opts: ['Never', 'Occasionally', 'Often', 'Almost daily'] },
+  { q: 'Do you have diabetes, hypertension, or another systemic condition?', s: 'Systemic conditions can directly affect eye health.', opts: ['None', 'Hypertension only', 'Diabetes only', 'Both / Multiple conditions'] },
 ];
 
 function Quiz() {
@@ -448,9 +453,9 @@ function Quiz() {
     const total = Object.values(scores).reduce((a, b) => a + b, 0);
     const max = QUESTIONS.length * 3;
     const r = total / max;
-    if (r < 0.3) result = { icon:'🌟', score:'Excellent Eye Health', title:'Your Eyes Appear Healthy!', desc:'Your responses suggest your eyes are in good shape. Keep up with annual check-ups and protect your eyes from UV and screen strain.' };
-    else if (r < 0.6) result = { icon:'👀', score:'Moderate Concern', title:'Some Signs Worth Watching', desc:'Your responses indicate a few areas of concern. We recommend scheduling a comprehensive eye examination with Dr. Sania to rule out early-stage conditions.' };
-    else result = { icon:'⚠️', score:'Attention Needed', title:'Please See an Eye Doctor Soon', desc:'Your responses suggest you may have underlying eye health issues that need prompt attention. Please book an appointment with Dr. Sania as soon as possible.' };
+    if (r < 0.3) result = { icon: '🌟', score: 'Excellent Eye Health', title: 'Your Eyes Appear Healthy!', desc: 'Your responses suggest your eyes are in good shape. Keep up with annual check-ups and protect your eyes from UV and screen strain.' };
+    else if (r < 0.6) result = { icon: '👀', score: 'Moderate Concern', title: 'Some Signs Worth Watching', desc: 'Your responses indicate a few areas of concern. We recommend scheduling a comprehensive eye examination with Dr. Sania to rule out early-stage conditions.' };
+    else result = { icon: '⚠️', score: 'Attention Needed', title: 'Please See an Eye Doctor Soon', desc: 'Your responses suggest you may have underlying eye health issues that need prompt attention. Please book an appointment with Dr. Sania as soon as possible.' };
   }
 
   return (
@@ -459,7 +464,7 @@ function Quiz() {
         <div className="quiz-header">
           <div className="section-label">Eye Health Check</div>
           <h2 className="section-title">Quick Vision Screening Quiz</h2>
-          <p style={{ fontSize:15, color:'var(--text2)', maxWidth:500, margin:'0 auto', lineHeight:1.6 }}>
+          <p style={{ fontSize: 15, color: 'var(--text2)', maxWidth: 500, margin: '0 auto', lineHeight: 1.6 }}>
             Answer a few quick questions to get a sense of your eye health. This is not a medical diagnosis — always consult your eye doctor.
           </p>
         </div>
@@ -467,7 +472,7 @@ function Quiz() {
           {!done ? (
             <>
               <div className="quiz-progress">
-                <div className="quiz-progress-bar"><div className="quiz-progress-fill" style={{ width:`${pct}%` }} /></div>
+                <div className="quiz-progress-bar"><div className="quiz-progress-fill" style={{ width: `${pct}%` }} /></div>
                 <span>Question {idx + 1} of {QUESTIONS.length}</span>
               </div>
               <div className="quiz-question">
@@ -492,8 +497,8 @@ function Quiz() {
               <div className="result-score">{result.score}</div>
               <h3>{result.title}</h3>
               <p>{result.desc}</p>
-              <a className="btn-primary" onClick={() => window.location.href = 'https://wa.me/917506013788?text=appointment%20confirmation'} style={{ display:'inline-block', marginBottom:16 }}>Book an Eye Check-up</a><br />
-              <button className="quiz-btn quiz-btn-prev" onClick={reset} style={{ marginTop:12 }}>Retake Quiz</button>
+              <a className="btn-primary" onClick={() => window.location.href = 'https://wa.me/917506013788?text=appointment%20confirmation'} style={{ display: 'inline-block', marginBottom: 16 }}>Book an Eye Check-up</a><br />
+              <button className="quiz-btn quiz-btn-prev" onClick={reset} style={{ marginTop: 12 }}>Retake Quiz</button>
             </div>
           )}
         </div>
@@ -506,12 +511,12 @@ function Quiz() {
 // REVIEWS
 // ════════════════════════════════════════════════════════
 const REVIEWS = [
-  { initials:'RK', name:'Rajan Kulkarni',   meta:'Cataract Surgery · Mumbai',         text:'"Dr. Sania operated on my mother\'s cataract and the results were incredible. She explained everything so patiently and the surgery was smooth. We are extremely grateful!"' },
-  { initials:'NP', name:'Nadia Patel',       meta:'Paediatric Oculoplasty · Thane',    text:'"My son had a drooping eyelid since birth. Dr. Sania performed the ptosis correction and the transformation was amazing. She is very skilled and genuinely caring."' },
-  { initials:'SS', name:'Sunita Sharma',     meta:'General Consultation · Sion',       text:'"I was nervous about my eye surgery but Dr. Sania made me feel so comfortable. She is incredibly knowledgeable yet speaks in a way patients easily understand."' },
-  { initials:'MK', name:'Mohammed Khan',     meta:'Health Camp · Dharavi',             text:'"Attended Dr. Sania\'s free eye camp in our area. She is dedicated to helping people regardless of their background. A truly compassionate doctor."' },
-  { initials:'FA', name:'Fatima Ansari',     meta:'Paediatric Cataract · Mumbai',      text:'"My 3-year-old had a cataract and we were devastated. Dr. Sania performed the surgery with great precision and he can see clearly now. We call her a miracle worker!"' },
-  { initials:'VD', name:'Vivek Desai',       meta:'Teleconsultation · Pune',           text:'"The teleconsultation was very convenient. Dr. Sania reviewed my reports online and adjusted my treatment plan. Saved me a trip to the hospital. Great service!"' },
+  { initials: 'RK', name: 'Rajan Kulkarni', meta: 'Cataract Surgery · Mumbai', text: '"Dr. Sania operated on my mother\'s cataract and the results were incredible. She explained everything so patiently and the surgery was smooth. We are extremely grateful!"' },
+  { initials: 'NP', name: 'Nadia Patel', meta: 'Paediatric Oculoplasty · Thane', text: '"My son had a drooping eyelid since birth. Dr. Sania performed the ptosis correction and the transformation was amazing. She is very skilled and genuinely caring."' },
+  { initials: 'SS', name: 'Sunita Sharma', meta: 'General Consultation · Sion', text: '"I was nervous about my eye surgery but Dr. Sania made me feel so comfortable. She is incredibly knowledgeable yet speaks in a way patients easily understand."' },
+  { initials: 'MK', name: 'Mohammed Khan', meta: 'Health Camp · Dharavi', text: '"Attended Dr. Sania\'s free eye camp in our area. She is dedicated to helping people regardless of their background. A truly compassionate doctor."' },
+  { initials: 'FA', name: 'Fatima Ansari', meta: 'Paediatric Cataract · Mumbai', text: '"My 3-year-old had a cataract and we were devastated. Dr. Sania performed the surgery with great precision and he can see clearly now. We call her a miracle worker!"' },
+  { initials: 'VD', name: 'Vivek Desai', meta: 'Teleconsultation · Pune', text: '"The teleconsultation was very convenient. Dr. Sania reviewed my reports online and adjusted my treatment plan. Saved me a trip to the hospital. Great service!"' },
 ];
 
 function Reviews() {
@@ -538,7 +543,7 @@ function Reviews() {
           ))}
         </div>
         <div className="reviews-summary">
-          {[['4.9','Average Rating'],['200+','Happy Patients'],['100%','Recommend Rate'],['10+','Health Camps']].map(([n,l]) => (
+          {[['4.9', 'Average Rating'], ['200+', 'Happy Patients'], ['100%', 'Recommend Rate'], ['10+', 'Health Camps']].map(([n, l]) => (
             <div key={l} className="rs-item">
               <div className="rs-num">{n}</div>
               <div className="rs-lbl">{l}</div>
@@ -557,11 +562,11 @@ function PatientLogin() {
   const [tab, setTab] = useState('login');
   const [accountCreated, setAccountCreated] = useState(false);
   const features = [
-    ['📋','View past prescriptions and reports'],
-    ['📅','Track upcoming appointments'],
-    ['💬','Message Dr. Sania directly'],
-    ['📊','Monitor your vision health history'],
-    ['💊','Get medication reminders'],
+    ['📋', 'View past prescriptions and reports'],
+    ['📅', 'Track upcoming appointments'],
+    ['💬', 'Message Dr. Sania directly'],
+    ['📊', 'Monitor your vision health history'],
+    ['💊', 'Get medication reminders'],
   ];
 
   const handleCreateAccount = () => {
@@ -588,15 +593,15 @@ function PatientLogin() {
         </div>
         <div className="login-card">
           <div className="login-tabs">
-            <button className={`login-tab${tab==='login'?' active':''}`} onClick={() => setTab('login')}>Patient Login</button>
-            <button className={`login-tab${tab==='register'?' active':''}`} onClick={() => setTab('register')}>New Patient</button>
+            <button className={`login-tab${tab === 'login' ? ' active' : ''}`} onClick={() => setTab('login')}>Patient Login</button>
+            <button className={`login-tab${tab === 'register' ? ' active' : ''}`} onClick={() => setTab('register')}>New Patient</button>
           </div>
           {tab === 'login' ? (
             <div>
               <div className="form-group"><label>Mobile Number / Email</label><input type="text" placeholder="+91 98765 43210" /></div>
               <div className="form-group"><label>Password</label><input type="password" placeholder="••••••••" /></div>
-              <button className="submit-btn" style={{ marginBottom:12 }}>Login to Portal</button>
-              <p style={{ textAlign:'center', fontSize:13, color:'var(--text3)' }}>Forgot password? <a href="#" style={{ color:'var(--teal)', fontWeight:500 }}>Reset here</a></p>
+              <button className="submit-btn" style={{ marginBottom: 12 }}>Login to Portal</button>
+              <p style={{ textAlign: 'center', fontSize: 13, color: 'var(--text3)' }}>Forgot password? <a href="#" style={{ color: 'var(--teal)', fontWeight: 500 }}>Reset here</a></p>
             </div>
           ) : (
             <div>
@@ -609,7 +614,7 @@ function PatientLogin() {
               <div className="form-group"><label>Date of Birth</label><input type="date" /></div>
               <button type="button" className="submit-btn" onClick={handleCreateAccount}>Create Patient Account</button>
               {accountCreated && (
-                <div className="form-success" style={{ marginTop:16 }}>
+                <div className="form-success" style={{ marginTop: 16 }}>
                   <div className="fs-icon">✅</div>
                   <h4>Account Created!</h4>
                   <p>Thanks! Please continue to book your appointment in the Appointment section.</p>
@@ -651,10 +656,10 @@ function Contact() {
           <h2 className="section-title">Contact &amp; Locations</h2>
           <p className="section-desc">Dr. Sania Sayed consults at two premium hospitals in Mumbai.</p>
           <div style={{ marginBottom: 32 }}>
-            <h4 style={{ fontSize:15, color:'var(--navy)', marginBottom:16 }}>Clinic Locations</h4>
+            <h4 style={{ fontSize: 15, color: 'var(--navy)', marginBottom: 16 }}>Clinic Locations</h4>
             {CLINIC_LOCATIONS.map((clinic, idx) => (
               <div key={idx} style={{ marginBottom: 24, paddingBottom: 24, borderBottom: idx < CLINIC_LOCATIONS.length - 1 ? '1px solid var(--border)' : 'none' }}>
-                <h5 style={{ fontSize:14, fontWeight:600, color:'var(--navy)', marginBottom:8 }}>{clinic.name}</h5>
+                <h5 style={{ fontSize: 14, fontWeight: 600, color: 'var(--navy)', marginBottom: 8 }}>{clinic.name}</h5>
                 <div className="contact-details">
                   <div className="contact-detail-item">
                     <div className="cd-icon">📍</div>
@@ -676,7 +681,7 @@ function Contact() {
           </div>
           <div className="contact-details">
             {[
-              ['✉️','Email','drsaniasayed@gmail.com'],
+              ['✉️', 'Email', 'drsaniasayed@gmail.com'],
             ].map(([icon, label, val]) => (
               <div key={label} className="contact-detail-item">
                 <div className="cd-icon">{icon}</div>
@@ -687,7 +692,7 @@ function Contact() {
               </div>
             ))}
           </div>
-          <h4 style={{ fontSize:15, color:'var(--navy)', marginBottom:16 }}>OPD Timings</h4>
+          <h4 style={{ fontSize: 15, color: 'var(--navy)', marginBottom: 16 }}>OPD Timings</h4>
           <table className="timing-table">
             <tbody>
               <tr><td>Monday – Friday</td><td>11:00 AM – 5:00 PM</td></tr>
@@ -704,24 +709,24 @@ function Contact() {
         </div>
         <div>
           <div className="map-placeholder">
-            <div style={{ fontSize:48, marginBottom:20 }}>🗺️</div>
-            <div style={{ display:'flex', flexDirection:'column', gap:24 }}>
-              <div style={{ textAlign:'center', paddingBottom:24, borderBottom:'1px solid var(--border)' }}>
-                <p style={{ fontSize:16, fontWeight:600, color:'var(--navy)', margin:'0 0 8px 0' }}>Habib Hospital</p>
-                <p style={{ fontSize:13, color:'var(--text3)', margin:'0 0 16px 0', lineHeight:1.5 }}>159, Jail Road East<br />Mumbai – 400009</p>
+            <div style={{ fontSize: 48, marginBottom: 20 }}>🗺️</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+              <div style={{ textAlign: 'center', paddingBottom: 24, borderBottom: '1px solid var(--border)' }}>
+                <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--navy)', margin: '0 0 8px 0' }}>Habib Hospital</p>
+                <p style={{ fontSize: 13, color: 'var(--text3)', margin: '0 0 16px 0', lineHeight: 1.5 }}>159, Jail Road East<br />Mumbai – 400009</p>
                 <a className="map-btn" href="https://maps.google.com/?q=Habib+Hospital+159+Jail+Road+East+Mumbai" target="_blank" rel="noreferrer">Open in Google Maps ↗</a>
               </div>
-              <div style={{ textAlign:'center' }}>
-                <p style={{ fontSize:16, fontWeight:600, color:'var(--navy)', margin:'0 0 8px 0' }}>K.J. Somaiya Hospital</p>
-                <p style={{ fontSize:13, color:'var(--text3)', margin:'0 0 16px 0', lineHeight:1.5 }}>Everard Nagar, Sion<br />Mumbai – 400022</p>
+              <div style={{ textAlign: 'center' }}>
+                <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--navy)', margin: '0 0 8px 0' }}>K.J. Somaiya Hospital</p>
+                <p style={{ fontSize: 13, color: 'var(--text3)', margin: '0 0 16px 0', lineHeight: 1.5 }}>Everard Nagar, Sion<br />Mumbai – 400022</p>
                 <a className="map-btn" href="https://maps.google.com/?q=KJ+Somaiya+Super+Speciality+Hospital+Sion+Mumbai" target="_blank" rel="noreferrer">Open in Google Maps ↗</a>
               </div>
             </div>
           </div>
-          <div style={{ marginTop:24, background:'var(--cream2)', borderRadius:16, padding:24 }}>
-            <h4 style={{ fontSize:15, color:'var(--navy)', marginBottom:16 }}>Send a Quick Message</h4>
+          <div style={{ marginTop: 24, background: 'var(--cream2)', borderRadius: 16, padding: 24 }}>
+            <h4 style={{ fontSize: 15, color: 'var(--navy)', marginBottom: 16 }}>Send a Quick Message</h4>
             <div className="form-group"><label>Your Name</label><input type="text" placeholder="Full name" /></div>
-            <div className="form-group"><label>Your Message</label><textarea placeholder="Hi Dr. Sania, I'd like to ask about..." style={{ minHeight:100 }} /></div>
+            <div className="form-group"><label>Your Message</label><textarea placeholder="Hi Dr. Sania, I'd like to ask about..." style={{ minHeight: 100 }} /></div>
             <button className="submit-btn" onClick={() => { setMsgSent(true); setTimeout(() => setMsgSent(false), 3000); }}
               style={{ background: msgSent ? 'var(--teal-dark)' : undefined }}>
               {msgSent ? 'Message Sent ✓' : 'Send Message'}
@@ -741,35 +746,35 @@ function Footer() {
     <footer>
       <div className="footer-grid">
         <div className="footer-brand">
-          <div style={{ display:'flex', alignItems:'center', gap:12 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <div className="nav-logo-circle">S</div>
             <div>
-              <div style={{ fontFamily:"'Playfair Display',serif", fontSize:16, fontWeight:600 }}>Dr. Sania A Sayed</div>
-              <div style={{ fontSize:12, color:'var(--teal-mid)' }}>Ophthalmologist &amp; Eye Surgeon</div>
+              <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 16, fontWeight: 600 }}>Dr. Sania A Sayed</div>
+              <div style={{ fontSize: 12, color: 'var(--teal-mid)' }}>Ophthalmologist &amp; Eye Surgeon</div>
             </div>
           </div>
           <p>MBBS, D.O.M.S. (Gold Medalist), Fellow (Asia). Dedicated to preserving and restoring vision for every patient, from children to seniors.</p>
         </div>
         <div className="footer-col">
           <h4>Quick Links</h4>
-          {[['home','Home'],['about','About Dr. Sania'],['services','Services'],['gallery','Gallery']].map(([id,l]) => (
+          {[['home', 'Home'], ['about', 'About Dr. Sania'], ['services', 'Services'], ['gallery', 'Gallery']].map(([id, l]) => (
             <a key={id} onClick={() => scrollTo(id)}>{l}</a>
           ))}
         </div>
         <div className="footer-col">
           <h4>Services</h4>
-          {['Cataract Surgery','Oculoplasty','Paediatric Eye Care','Teleconsultation','Glaucoma'].map(s => (
+          {['Cataract Surgery', 'Oculoplasty', 'Paediatric Eye Care', 'Teleconsultation', 'Glaucoma'].map(s => (
             <a key={s} onClick={() => scrollTo('services')}>{s}</a>
           ))}
         </div>
         <div className="footer-col">
           <h4>Contact</h4>
           <a><strong>Habib Hospital</strong></a>
-          <a style={{fontSize:12, marginBottom:8}}>159, Jail Road East, Sandhurst Road, Mumbai – 400009</a>
-          <a style={{fontSize:12, marginBottom:12}}>7498476584 / 7977419344</a>
+          <a style={{ fontSize: 12, marginBottom: 8 }}>159, Jail Road East, Sandhurst Road, Mumbai – 400009</a>
+          <a style={{ fontSize: 12, marginBottom: 12 }}>7498476584 / 7977419344</a>
           <a><strong>K.J. Somaiya Hospital</strong></a>
-          <a style={{fontSize:12, marginBottom:8}}>Everard Nagar, off Eastern Express Highway, Sion, Mumbai – 400022</a>
-          <a style={{fontSize:12, marginBottom:12}}>7977419344</a>
+          <a style={{ fontSize: 12, marginBottom: 8 }}>Everard Nagar, off Eastern Express Highway, Sion, Mumbai – 400022</a>
+          <a style={{ fontSize: 12, marginBottom: 12 }}>7977419344</a>
           <a>drsaniasayed@gmail.com</a>
           <a onClick={() => window.location.href = 'https://wa.me/917506013788?text=appointment%20confirmation'}>Book Appointment →</a>
         </div>
