@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import { Helmet } from "react-helmet-async";
 // ── IMAGES ────────────────────────────────────────────
 const IMGS = {
   dryEye: '/images/dryeye.jpeg',
@@ -56,6 +56,58 @@ function Navbar() {
 
   return (
     <>
+
+      <Helmet>
+        <title>
+          Dr. Sania A Sayed | Eye Specialist & Cataract Surgeon in Mumbai
+        </title>
+
+        <meta
+          name="description"
+          content="Dr. Sania A Sayed is a leading ophthalmologist in Mumbai specializing in cataract surgery, glaucoma treatment, paediatric eye care, retina treatment and oculoplasty."
+        />
+
+        <meta
+          name="keywords"
+          content="Eye Specialist Mumbai, Cataract Surgeon Mumbai, Ophthalmologist Mumbai, Eye Doctor Sion, Habib Hospital Eye Doctor, Glaucoma Specialist Mumbai"
+        />
+
+        <meta name="robots" content="index, follow" />
+
+        <meta property="og:title" content="Dr. Sania A Sayed" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/images/img-headshot-1.jpeg" />
+        <meta property="og:description" content="Advanced Eye Care in Mumbai" />
+      </Helmet>
+
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Physician",
+          "name": "Dr. Sania A Sayed",
+          "medicalSpecialty": "Ophthalmology",
+          "telephone": "+91 7977419344",
+          "email": "drsaniasayed@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mumbai",
+            "addressRegion": "Maharashtra",
+            "postalCode": "400022",
+            "addressCountry": "IN"
+          },
+          "hospitalAffiliation": [
+            {
+              "@type": "Hospital",
+              "name": "K J Somaiya Super Speciality Hospital"
+            },
+            {
+              "@type": "Hospital",
+              "name": "Habib Hospital"
+            }
+          ]
+        })}
+        </script>
+
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
         <div className="nav-brand">
           <img src="/images/dryeye.jpeg" alt="Logo" style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'cover' }} />
@@ -175,13 +227,13 @@ function About() {
       <div className="about-grid">
         <div className="about-imgs">
           <div className="about-img-main">
-            <img src={IMGS.headshot} alt="Dr. Sania" />
+            <img src={IMGS.headshot} alt="Dr. Sania A Sayed Eye Specialist Mumbai" />
           </div>
           <div className="about-img-sm">
             <img src={IMGS.conference1} alt="International Conference Europe" />
           </div>
           <div className="about-img-sm">
-            <img src={IMGS.surgery} alt="Eye Surgery" />
+            <img src={IMGS.surgery} alt="Cataract Eye Surgery in Mumbai" />
           </div>
         </div>
         <div className="about-content">
