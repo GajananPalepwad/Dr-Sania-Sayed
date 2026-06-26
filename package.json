@@ -11,6 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@sparticuz/chromium": "^149.0.0",
+    "puppeteer-core": "^25.2.1",
     "react": "^19.2.6",
     "react-dom": "^19.2.7",
     "react-helmet-async": "^3.0.0",
@@ -31,7 +33,10 @@
   "reactSnap": {
     "source": "dist",
     "minifyHtml": false,
-  "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
-  "puppeteerExecutablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "puppeteerExecutablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
   }
 }
